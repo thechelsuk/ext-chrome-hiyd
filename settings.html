@@ -10,109 +10,103 @@
                 font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
                 margin: 0;
                 padding: 0;
-                background: #f7f9fb;
+                background: #f5f7fa;
                 color: #222;
             }
 
             .container {
                 max-width: 420px;
-                margin: 40px auto;
+                min-width: 320px;
+                margin: 48px auto;
                 background: #fff;
-                border-radius: 14px;
-                box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+                border-radius: 16px;
+                box-shadow: 0 4px 24px rgba(42, 122, 226, 0.07);
                 padding: 2.5em 2em 2em 2em;
             }
 
             h1 {
-                font-size: 2em;
-                margin-bottom: 0.5em;
-                color: #2a7ae2;
-                letter-spacing: 1px;
+                font-size: 1.7em;
+                margin-bottom: 1.2em;
+                color: #1a5bb8;
+                font-weight: 700;
+                letter-spacing: 0.5px;
             }
 
             form {
                 margin-top: 1.5em;
+                display: flex;
+                flex-direction: column;
+                gap: 1.7em;
+            }
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.7em;
             }
 
             label {
-                display: block;
-                margin-top: 1.5em;
-                font-weight: 500;
+                font-weight: 600;
+                margin-bottom: 0.1em;
+                color: #222;
+                font-size: 1.05em;
+                letter-spacing: 0.1px;
             }
 
-            .input-row {
+            .button-row {
                 display: flex;
-                align-items: center;
-                gap: 0.5em;
-                margin-top: 0.5em;
+                gap: 1em;
+                margin-top: 0.7em;
             }
 
-            input[type="text"] {
-                width: 220px;
-                padding: 0.5em 0.7em;
-                border: 1px solid #cfd8dc;
+            .picker-btn,
+            button[type="submit"] {
+                background: #f0f4fa;
+                color: #1a5bb8;
+                border: 1px solid #dbe6f6;
                 border-radius: 6px;
+                padding: 0.5em 1.3em;
                 font-size: 1em;
-                background: #f5f7fa;
-                transition: border 0.2s;
+                font-weight: 500;
+                cursor: pointer;
+                transition: background 0.2s, border 0.2s;
             }
 
-            input[type="text"]:focus {
-                border: 1.5px solid #2a7ae2;
-                outline: none;
-                background: #fff;
+            .picker-btn:hover,
+            button[type="submit"]:hover {
+                background: #e3eaf6;
+                border: 1px solid #b3c6e6;
             }
 
             button[type="submit"] {
-                margin-top: 2em;
-                background: #2a7ae2;
                 color: #fff;
+                background: #1a5bb8;
                 border: none;
-                border-radius: 6px;
-                padding: 0.7em 1.7em;
-                font-size: 1em;
                 font-weight: 600;
-                cursor: pointer;
                 box-shadow: 0 1px 4px rgba(42, 122, 226, 0.08);
                 transition: background 0.2s;
             }
 
             button[type="submit"]:hover {
-                background: #1a5bb8;
+                background: #14508a;
             }
 
             .links {
                 margin-top: 2.5em;
                 text-align: center;
-                font-size: 1.1em;
+                font-size: 1.08em;
             }
 
             .links a {
-                color: #2a7ae2;
+                color: #1a5bb8;
                 text-decoration: none;
                 margin: 0 0.5em;
                 transition: color 0.2s;
             }
 
             .links a:hover {
-                color: #1a5bb8;
+                color: #14508a;
                 text-decoration: underline;
-            }
-
-            .picker-btn {
-                background: #e3eaf6;
-                color: #2a7ae2;
-                border: none;
-                border-radius: 5px;
-                padding: 0.4em 1em;
-                font-size: 0.98em;
-                margin-left: 0.5em;
-                cursor: pointer;
-                transition: background 0.2s;
-            }
-
-            .picker-btn:hover {
-                background: #d0dff6;
             }
         </style>
     </head>
@@ -120,19 +114,18 @@
     <body>
         <div class="container">
             <h1>Hyd Settings</h1>
+            <p>Pick a location for your saved files</p>
             <form id="settings-form">
-                <label>
-                    Default Save Location:
-                    <div class="input-row">
-                        <input type="text" id="saveLocation" placeholder="e.g. Documents/Hyd" readonly />
+                <div class="form-group">
+                    <div class="button-row">
                         <button type="button" class="picker-btn" id="pickLocation">Choose…</button>
+                        <button type="submit">Save Settings</button>
                     </div>
-                </label>
-                <button type="submit">Save Settings</button>
+                </div>
             </form>
             <div class="links">
                 <a href="https://github.com/Mat-0/Hyd-plugin" target="_blank">GitHub Repo</a> |
-                <a href="https://hyd.uk" target="_blank">hyd.uk</a>
+                <a href="https://thechels.uk/hyd" target="_blank">Website</a>
             </div>
             <div style="margin-top:2em; font-size:0.95em; color:#888; text-align:center;">
                 Icon from <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>, used under <a

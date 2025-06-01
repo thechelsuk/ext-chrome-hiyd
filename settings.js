@@ -14,10 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Save settings
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        chrome.storage.sync.set({
-            saveLocation: saveLocation.value,
+        // No message, just save the last chosen folder (if any)
+        chrome.storage.sync.get(["saveLocation"], (data) => {
+            if (data.saveLocation) {
+                chrome.storage.sync.set({ saveLocation: data.saveLocation });
+            }
         });
-        alert("Settings saved!");
     });
 
     // Directory picker (File System Access API, Chromium only)
@@ -26,41 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.showDirectoryPicker) {
                 try {
                     const dirHandle = await window.showDirectoryPicker();
-                    saveLocation.value = dirHandle.name;
+                    // Save the folder name directly
                     chrome.storage.sync.set({ saveLocation: dirHandle.name });
-                    // Show a confirmation message
-                    let msg = document.getElementById("locationMsg");
-                    if (!msg) {
-                        msg = document.createElement("div");
-                        msg.id = "locationMsg";
-                        msg.style.marginTop = "0.5em";
-                        msg.style.color = "#2a7ae2";
-                        saveLocation.parentElement.appendChild(msg);
-                    }
-                    msg.textContent = `Selected folder: ${dirHandle.name}`;
                 } catch (e) {
                     // User cancelled or not supported
                 }
             } else {
-                alert(
-                    "Directory picker is not supported in this browser. Please enter a path manually."
-                );
+                // Optionally show a message or fallback
             }
         });
     }
-
-    // Show confirmation if already set
-    chrome.storage.sync.get(["saveLocation"], (data) => {
-        if (data.saveLocation) {
-            let msg = document.getElementById("locationMsg");
-            if (!msg) {
-                msg = document.createElement("div");
-                msg.id = "locationMsg";
-                msg.style.marginTop = "0.5em";
-                msg.style.color = "#2a7ae2";
-                saveLocation.parentElement.appendChild(msg);
-            }
-            msg.textContent = `Selected folder: ${data.saveLocation}`;
-        }
-    });
 });
