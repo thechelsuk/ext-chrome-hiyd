@@ -3,6 +3,12 @@ name: Publish
 on:
     push:
         branches: [main]
+    workflow_dispatch:
+        inputs:
+            version:
+                description: "Version to release"
+                required: false
+                default: "latest"
 
 jobs:
     bump-build-test-release:
