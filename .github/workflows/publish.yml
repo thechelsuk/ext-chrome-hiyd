@@ -11,7 +11,7 @@ on:
                 default: "latest"
 
 jobs:
-    bump-build-test-release:
+    build:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
