@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Hyd",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Capture highlighted text and page metadata as markdown.",
     "permissions": [
         "scripting",
