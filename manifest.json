@@ -1,0 +1,48 @@
+{
+    "manifest_version": 3,
+    "name": "Hyd",
+    "version": "1.0.0",
+    "description": "Capture highlighted text and page metadata as markdown.",
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "storage",
+        "contextMenus"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.ext.js"
+    },
+    "action": {
+        "default_title": "Hyd Settings",
+        "default_popup": "settings.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "turndown.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

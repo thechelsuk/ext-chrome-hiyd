@@ -1,0 +1,48 @@
+name: Bump, Build, Test, and Release
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    bump-build-test-release:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+
+            - name: Bump version in manifest.json and package.json
+              run: |
+                  node .github/scripts/bump-version.js
+
+            - name: Commit and push version bump
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: "chore: bump version [skip ci]"
+                  branch: main
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Run tests
+              run: npm test
+
+            - name: Get new version
+              id: get_version
+              run: |
+                  VERSION=$(node -p "require('./package.json').version")
+                  echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+            - name: Create GitHub Release
+              uses: softprops/action-gh-release@v2
+              with:
+                  tag_name: v${{ steps.get_version.outputs.version }}
+                  name: Release v${{ steps.get_version.outputs.version }}
+                  generate_release_notes: true
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

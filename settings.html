@@ -1,0 +1,145 @@
+<!-- settings.html for Hyd extension -->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hyd Settings</title>
+        <style>
+            body {
+                font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: #f7f9fb;
+                color: #222;
+            }
+
+            .container {
+                max-width: 420px;
+                margin: 40px auto;
+                background: #fff;
+                border-radius: 14px;
+                box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+                padding: 2.5em 2em 2em 2em;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 0.5em;
+                color: #2a7ae2;
+                letter-spacing: 1px;
+            }
+
+            form {
+                margin-top: 1.5em;
+            }
+
+            label {
+                display: block;
+                margin-top: 1.5em;
+                font-weight: 500;
+            }
+
+            .input-row {
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+                margin-top: 0.5em;
+            }
+
+            input[type="text"] {
+                width: 220px;
+                padding: 0.5em 0.7em;
+                border: 1px solid #cfd8dc;
+                border-radius: 6px;
+                font-size: 1em;
+                background: #f5f7fa;
+                transition: border 0.2s;
+            }
+
+            input[type="text"]:focus {
+                border: 1.5px solid #2a7ae2;
+                outline: none;
+                background: #fff;
+            }
+
+            button[type="submit"] {
+                margin-top: 2em;
+                background: #2a7ae2;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                padding: 0.7em 1.7em;
+                font-size: 1em;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 1px 4px rgba(42, 122, 226, 0.08);
+                transition: background 0.2s;
+            }
+
+            button[type="submit"]:hover {
+                background: #1a5bb8;
+            }
+
+            .links {
+                margin-top: 2.5em;
+                text-align: center;
+                font-size: 1.1em;
+            }
+
+            .links a {
+                color: #2a7ae2;
+                text-decoration: none;
+                margin: 0 0.5em;
+                transition: color 0.2s;
+            }
+
+            .links a:hover {
+                color: #1a5bb8;
+                text-decoration: underline;
+            }
+
+            .picker-btn {
+                background: #e3eaf6;
+                color: #2a7ae2;
+                border: none;
+                border-radius: 5px;
+                padding: 0.4em 1em;
+                font-size: 0.98em;
+                margin-left: 0.5em;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+
+            .picker-btn:hover {
+                background: #d0dff6;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Hyd Settings</h1>
+            <form id="settings-form">
+                <label>
+                    Default Save Location:
+                    <div class="input-row">
+                        <input type="text" id="saveLocation" placeholder="e.g. Documents/Hyd" readonly />
+                        <button type="button" class="picker-btn" id="pickLocation">Choose…</button>
+                    </div>
+                </label>
+                <button type="submit">Save Settings</button>
+            </form>
+            <div class="links">
+                <a href="https://github.com/Mat-0/Hyd-plugin" target="_blank">GitHub Repo</a> |
+                <a href="https://hyd.uk" target="_blank">hyd.uk</a>
+            </div>
+            <div style="margin-top:2em; font-size:0.95em; color:#888; text-align:center;">
+                Icon from <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>, used under <a
+                    href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC 4.0 licence</a>.
+            </div>
+        </div>
+        <script src="settings.js"></script>
+    </body>
+
+</html>
