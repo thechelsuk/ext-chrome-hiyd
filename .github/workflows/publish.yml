@@ -41,4 +41,4 @@ jobs:
                   name: Release v${{ steps.get_version.outputs.version }}
                   generate_release_notes: true
               env:
-                  GITHUB_TOKEN: ${{ secrets.hyd_release_pat }}
+                  GITHUB_TOKEN: ${{ secrets.hiyd_release_pat }}

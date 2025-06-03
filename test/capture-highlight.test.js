@@ -6,7 +6,7 @@ console.log("Test: capture highlighted text - manual test required.");
 // Steps:
 // 1. Load extension in Chrome.
 // 2. Highlight text on any page.
-// 3. Click the Hyd icon or use Ctrl+Shift+Y.
+// 3. Click the Hiyd icon or use Ctrl+Shift+Y.
 // 4. Check background console for 'Captured text:' log.
 
 // Remove this file or add a dummy test to avoid Jest errors

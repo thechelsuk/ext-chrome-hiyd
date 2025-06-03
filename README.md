@@ -1,6 +1,6 @@
-# Hyd Browser Extension
+# Hiyd Browser Extension
 
-Hyd is a Chromium browser extension that lets you capture highlighted text and web page metadata, saving it as a Markdown file with Jekyll front matter. It is designed for users who want to quickly save and organize web clippings in a portable, readable format.
+Hiyd is a Chromium browser extension that lets you capture highlighted text and web page metadata, saving it as a Markdown file with Jekyll front matter. It is designed for users who want to quickly save and organize web clippings in a portable, readable format.
 
 ## Features
 
@@ -18,7 +18,7 @@ Hyd is a Chromium browser extension that lets you capture highlighted text and w
 1. Install the extension in your Chromium-based browser.
 2. Go to the extension's options page to set your default save location.
 3. Highlight text on any web page.
-4. Right-click and select "Hyd Capture" in the context menu.
+4. Right-click and select "Hiyd Capture" in the context menu.
 5. The extension will prompt you to save a Markdown file.
 
 ## Requirements & Approach
@@ -29,8 +29,8 @@ Hyd is a Chromium browser extension that lets you capture highlighted text and w
 
 ## Links
 
-- [GitHub Repo](https://github.com/Mat-0/hyd-extension)
-- [Website](https://thechels.uk/hyd)
+- [GitHub Repo](https://github.com/Mat-0/hiyd-extension)
+- [Website](https://thechels.uk/hiyd)
 
 ---
 Icon from [Font Awesome](https://fontawesome.com/), used under [CC 4.0 licence](https://creativecommons.org/licenses/by/4.0/).

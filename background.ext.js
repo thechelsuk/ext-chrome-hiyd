@@ -1,16 +1,16 @@
 // background.ext.js
-// Chrome extension logic for Hyd context menu
+// Chrome extension logic for Hiyd context menu
 
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
-        id: "hyd-capture",
-        title: "Hyd Capture",
+        id: "hiyd-capture",
+        title: "Hiyd Capture",
         contexts: ["selection"],
     });
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-    if (info.menuItemId === "hyd-capture" && tab && tab.id) {
+    if (info.menuItemId === "hiyd-capture" && tab && tab.id) {
         chrome.tabs.sendMessage(
             tab.id,
             { action: "get-highlight" },

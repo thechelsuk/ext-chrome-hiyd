@@ -1,4 +1,4 @@
-// settings.js for Hyd extension
+// settings.js for Hiyd extension
 // Save and load settings from chrome.storage
 
 document.addEventListener("DOMContentLoaded", () => {

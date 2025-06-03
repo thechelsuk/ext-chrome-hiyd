@@ -1,6 +1,6 @@
 // background.js
 // Handles browser action and keyboard shortcut
-console.log("Hyd extension background.js loaded");
+console.log("Hiyd extension background.js loaded");
 
 // Only include pure functions for unit testing
 function sanitizeFilename(str) {

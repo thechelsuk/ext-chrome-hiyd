@@ -32,10 +32,10 @@ function getPageMetadata() {
     };
 }
 
-console.log("Hyd content.js loaded");
+console.log("Hiyd content.js loaded");
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    console.log("Hyd content.js received message:", request);
+    console.log("Hiyd content.js received message:", request);
     if (request.action === "get-highlight") {
         sendResponse(getPageMetadata());
     }

@@ -1,7 +1,7 @@
 {
-    "name": "hyd-plugin",
+    "name": "hiyd-plugin",
     "version": "1.1.0",
-    "description": "Hyd browser extension",
+    "description": "Hiyd browser extension",
     "main": "background.js",
     "scripts": {
         "test": "jest"

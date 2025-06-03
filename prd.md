@@ -4,7 +4,7 @@ As a user when I highlight text on a web page and hit a shortcut or icon on the 
 
 ## Requirements
 
-- The extension should capture highlighted text on a web page when the user clicks a 'Hyd Capture' context or right click menu option.
+- The extension should capture highlighted text on a web page when the user clicks a 'Hiyd Capture' context or right click menu option.
 
 - Click the extension icon in the browser toolbar to open up the settings page.
 
@@ -33,13 +33,13 @@ Including:
 
 - The extension needs no other data, no user data.
 
-- The extension should be called "Hyd" and should have a simple test tube icon.
+- The extension should be called "Hiyd" and should have a simple test tube icon.
 
 - The output file should be named yyyy-mm-dd-title.md Where that is the date of capture and page title with all special html or non-alpha characters replaced with dashes.
 
 - The extension should have settings for the user to choose a default save location and to auto save on button click.
 
-- The extension should settings should have a link to a GitHub repo and a link to the hyd.uk
+- The extension should settings should have a link to a GitHub repo and a link to the hiyd.uk
 
 ## Approach
 
