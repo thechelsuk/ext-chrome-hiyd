@@ -29,8 +29,5 @@ Hiyd is a Chromium browser extension that lets you capture highlighted text and 
 
 ## Links
 
-- [GitHub Repo](https://github.com/Mat-0/hiyd-extension)
-- [Website](https://thechels.uk/hiyd)
-
----
-Icon from [Font Awesome](https://fontawesome.com/), used under [CC 4.0 licence](https://creativecommons.org/licenses/by/4.0/).
+- [GitHub](https://github.com/hiyd-uk/hiyd-extension)
+- [Website](https://hiyd.uk)
