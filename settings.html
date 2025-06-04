@@ -32,6 +32,24 @@
                 letter-spacing: 0.5px;
             }
 
+            .header {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                margin-bottom: 1.2em;
+            }
+
+            .header img {
+                width: 64px;
+                height: 64px;
+                flex-shrink: 0;
+            }
+
+            .header h1 {
+                margin: 0;
+                line-height: 1.2;
+            }
+
             form {
                 margin-top: 1.5em;
                 display: flex;
@@ -74,7 +92,7 @@
 
             .picker-btn:hover,
             button[type="submit"]:hover {
-                background: #e3eaf6;
+                background: #a3a6ac;
                 border: 1px solid #b3c6e6;
             }
 
@@ -93,7 +111,6 @@
 
             .links {
                 margin-top: 2.5em;
-                text-align: center;
                 font-size: 1.08em;
             }
 
@@ -113,19 +130,29 @@
 
     <body>
         <div class="container">
-            <h1>Hiyd Settings</h1>
-            <p>Pick a location for your saved files</p>
-            <form id="settings-form">
-                <div class="form-group">
-                    <div class="button-row">
-                        <button type="button" class="picker-btn" id="pickLocation">Choose…</button>
-                        <button type="submit">Save Settings</button>
-                    </div>
-                </div>
-            </form>
+            <div class="header">
+                <img src="assets/icon128.png" alt="Hiyd Logo">
+                <h1>Hiyd</h1>
+            </div>
+            <p>Hiyd captures highlighted text and saves it as a quote in a markdown file ready for a Jekyll blog. Use
+                the right-click context menu on any
+                selected text to save it.</p>
+
+            <h2>How to use:</h2>
+            <ul>
+                <li>Select any text on a webpage</li>
+                <li>Right-click and choose "Hiyd Capture"</li>
+                <li>Choose where to save the markdown file</li>
+            </ul>
+
             <div class="links">
-                <a href="https://github.com/hiyd-uk/hiyd-extension" target="_blank">GitHub</a> |
-                <a href="https://hiyd.uk/" target="_blank">Website</a>
+                <h3>Useful Links:</h3>
+                <ul>
+                    <li><a href="https://github.com/hiyd-uk/hiyd-extension" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://hiyd.uk/" target="_blank">Official Website</a></li>
+                    <li><a href="https://ko-fi.com/TheChelsUk" target="_blank">Support Development</a></li>
+                    <li><a href="https://hiyd.uk/privacy" target="_blank">Privacy Policy</a></li>
+                </ul>
             </div>
         </div>
         <script src="settings.js"></script>
