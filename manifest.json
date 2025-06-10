@@ -6,11 +6,7 @@
     "permissions": [
         "scripting",
         "activeTab",
-        "storage",
         "contextMenus"
-    ],
-    "host_permissions": [
-        "<all_urls>"
     ],
     "background": {
         "service_worker": "background.ext.js"
@@ -37,9 +33,6 @@
     },
     "web_accessible_resources": [
         {
-            "resources": [
-                "turndown.js"
-            ],
             "matches": [
                 "<all_urls>"
             ]
