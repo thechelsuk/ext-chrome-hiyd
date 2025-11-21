@@ -34,11 +34,15 @@ jobs:
                   VERSION=$(node -p "require('./package.json').version")
                   echo "version=$VERSION" >> $GITHUB_OUTPUT
 
+            - name: Build distribution
+              run: bash build-distribution.sh
+
             - name: Create GitHub Release
               uses: softprops/action-gh-release@v2
               with:
                   tag_name: v${{ steps.get_version.outputs.version }}
                   name: Release v${{ steps.get_version.outputs.version }}
                   generate_release_notes: true
+                  files: distribution.zip
               env:
                   GITHUB_TOKEN: ${{ secrets.hiyd_release_pat }}
