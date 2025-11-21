@@ -37,7 +37,7 @@ jobs:
               id: get_version
               run: |
                   VERSION=$(node -p "require('./package.json').version")
-                  echo "version=$VERSION" > $GITHUB_OUTPUT
+                  echo "version=$VERSION" >> $GITHUB_OUTPUT
 
             - name: Build distribution
               run: bash build-distribution.sh
