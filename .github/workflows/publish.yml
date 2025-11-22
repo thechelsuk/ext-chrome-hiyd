@@ -13,7 +13,6 @@ on:
 # Grant minimal permissions so the default GITHUB_TOKEN can create releases and generate release notes
 permissions:
     contents: write    # required to create releases and upload release assets
-    metadata: read     # read-only metadata access
 
 jobs:
     build:
