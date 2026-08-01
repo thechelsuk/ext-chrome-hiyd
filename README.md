@@ -1,6 +1,6 @@
 # Hiyd Browser Extension
 
-Hiyd is a Chromium browser extension that lets you capture highlighted text and web page metadata, saving it as a Markdown file with Jekyll front matter. It is designed for users who want to quickly save and organize web clippings in a portable, readable format.
+Hiyd is a Chromium browser extension that lets you capture highlighted text and web page metadata, saving it as a Markdown file with Jekyll front matter. It is designed for users who want to quickly save linked quote style blog posts.
 
 ## Features
 
@@ -12,6 +12,7 @@ Hiyd is a Chromium browser extension that lets you capture highlighted text and 
 - File is named as `yyyy-mm-dd-title.md` (date and sanitized page title).
 - Choose a default save location and auto-save option in settings.
 - Simple, clean UI and UX.
+- Create up to 5 custom front matter items.
 
 ## Usage
 
@@ -29,5 +30,5 @@ Hiyd is a Chromium browser extension that lets you capture highlighted text and 
 
 ## Links
 
-- [GitHub](https://github.com/hiyd-uk/hiyd-extension)
+- [GitHub](https://github.com/thechelsuk/ext-chrome-hiyd)
 - [Website](https://hiyd.uk)
