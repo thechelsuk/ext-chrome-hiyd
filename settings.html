@@ -15,8 +15,8 @@
             }
 
             .container {
-                max-width: 420px;
-                min-width: 320px;
+                max-width: 640px;
+                min-width: 420px;
                 margin: 48px auto;
                 background: #fff;
                 border-radius: 16px;
@@ -109,6 +109,74 @@
                 background: #14508a;
             }
 
+            .help-text {
+                margin: 0;
+                color: #5d6773;
+                font-size: 0.95em;
+                line-height: 1.5;
+            }
+
+            .front-matter-rows {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8em;
+            }
+
+            .front-matter-row {
+                display: flex;
+                gap: 0.4em;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+
+            .front-matter-input {
+                flex: 1 1 0;
+                min-width: 120px;
+                padding: 0.55em 0.65em;
+                border-radius: 6px;
+                border: 1px solid #dbe6f6;
+                font-size: 0.95em;
+            }
+
+            .front-matter-remove {
+                background: #fff;
+                color: #b04b4b;
+                border: 1px solid #e8c4c4;
+                border-radius: 6px;
+                padding: 0.5em 0.8em;
+                cursor: pointer;
+            }
+
+            .row-warning {
+                color: #b04b4b;
+                font-size: 0.85em;
+                margin-left: 0.5em;
+                white-space: nowrap;
+            }
+
+            .front-matter-row.invalid .front-matter-input {
+                border-color: #f2c0c0;
+                background: #fff6f6;
+            }
+
+            .secondary-btn {
+                background: #f0f4fa;
+                color: #1a5bb8;
+                border: 1px solid #dbe6f6;
+                border-radius: 6px;
+                padding: 0.55em 1em;
+                font-size: 0.95em;
+                cursor: pointer;
+                align-self: flex-start;
+            }
+
+            .status {
+                min-height: 1.2em;
+                margin: 0;
+                color: #1a5bb8;
+                font-size: 0.95em;
+            }
+
             .links {
                 margin-top: 2.5em;
                 font-size: 1.08em;
@@ -144,6 +212,34 @@
                 <li>Right-click and choose "Hiyd Capture"</li>
                 <li>Choose where to save the markdown file</li>
             </ul>
+
+            <form id="settings-form">
+                <div class="form-group">
+                    <label>Built-in default front matter</label>
+                    <p class="help-text">These items are included automatically and cannot be changed here:</p>
+                    <ul class="help-text">
+                        <li>date</li>
+                        <li>title</li>
+                        <li>cited</li>
+                        <li>link</li>
+                        <li>seo</li>
+                        <li>tags</li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="frontMatterDefaults">Custom front matter items</label>
+                    <p class="help-text">Add up to 5 key/value pairs. These will be added to every captured markdown
+                        file as string values. Keys that match built-in defaults will be ignored.</p>
+                    <div id="front-matter-rows" class="front-matter-rows"></div>
+                    <button type="button" id="add-front-matter" class="secondary-btn">Add another item</button>
+                </div>
+
+                <div class="button-row">
+                    <button type="submit">Save defaults</button>
+                </div>
+                <p id="settings-status" class="status" aria-live="polite"></p>
+            </form>
 
             <div class="links">
                 <h3>Useful Links:</h3>

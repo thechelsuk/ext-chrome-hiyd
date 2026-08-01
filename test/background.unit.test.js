@@ -44,6 +44,27 @@ describe("toMarkdown", () => {
         expect(md).toContain("> Line 2");
     });
 
+    it("should include configured front matter defaults", () => {
+        const data = {
+            date: "2025-06-01",
+            title: "Test Title",
+            cited: "Author",
+            link: "https://example.com",
+            seo: "desc",
+            tags: "tag1,tag2",
+            text: "Line 1",
+        };
+        const defaults = [
+            { key: "category", value: "notes" },
+            { key: "author", value: "Example" },
+        ];
+
+        const md = toMarkdown(data, defaults);
+
+        expect(md).toContain('category: "notes"');
+        expect(md).toContain('author: "Example"');
+    });
+
     describe("toMarkdown edge cases", () => {
         it("should handle missing fields gracefully", () => {
             const data = { date: "2025-06-01", text: "" };
