@@ -1,13 +1,13 @@
 {
     "name": "hiyd-plugin",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Hiyd browser extension - capture content as a linked quote post in markdown format.",
     "main": "background.js",
     "scripts": {
         "test": "jest"
     },
     "devDependencies": {
-        "jest": "^29.0.0",
-        "jest-environment-jsdom": "^30.0.0-beta.3"
+        "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1"
     }
 }
