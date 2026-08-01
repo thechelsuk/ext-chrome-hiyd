@@ -69,13 +69,19 @@ function validateRows(container) {
     const rows = Array.from(container.querySelectorAll(".front-matter-row"));
     const counts = {};
     rows.forEach((row) => {
-        const key = String(row.querySelectorAll(".front-matter-input")[0]?.value || "").trim().toLowerCase();
+        const key = String(
+            row.querySelectorAll(".front-matter-input")[0]?.value || "",
+        )
+            .trim()
+            .toLowerCase();
         if (key) counts[key] = (counts[key] || 0) + 1;
     });
 
     let allValid = true;
     rows.forEach((row) => {
-        const keyRaw = String(row.querySelectorAll(".front-matter-input")[0]?.value || "").trim();
+        const keyRaw = String(
+            row.querySelectorAll(".front-matter-input")[0]?.value || "",
+        ).trim();
         const key = keyRaw.toLowerCase();
         if (!keyRaw) {
             setRowWarning(row, "");
@@ -160,7 +166,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     rowsContainer.addEventListener("input", (event) => {
-        if (event.target && event.target.classList && event.target.classList.contains("front-matter-input")) {
+        if (
+            event.target &&
+            event.target.classList &&
+            event.target.classList.contains("front-matter-input")
+        ) {
             validateRows(rowsContainer);
         }
     });
@@ -171,16 +181,21 @@ document.addEventListener("DOMContentLoaded", () => {
         // validate rows first; if invalid, prevent save
         const validNow = validateRows(rowsContainer);
         if (!validNow) {
-            status.textContent = "Please fix duplicate or reserved keys before saving.";
+            status.textContent =
+                "Please fix duplicate or reserved keys before saving.";
             return;
         }
 
-        const raw = Array.from(rowsContainer.querySelectorAll(".front-matter-row")).map(
-            (row) => ({
-                key: String(row.querySelector(".front-matter-input")?.value || "").trim(),
-                value: String(row.querySelectorAll(".front-matter-input")[1]?.value || "").trim(),
-            }),
-        );
+        const raw = Array.from(
+            rowsContainer.querySelectorAll(".front-matter-row"),
+        ).map((row) => ({
+            key: String(
+                row.querySelector(".front-matter-input")?.value || "",
+            ).trim(),
+            value: String(
+                row.querySelectorAll(".front-matter-input")[1]?.value || "",
+            ).trim(),
+        }));
 
         const seen = new Set();
         const valid = [];
