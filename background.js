@@ -7,7 +7,7 @@ function sanitizeFilename(str) {
     return str
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "");
+        .replace(/^-|-$/g, "");
 }
 
 const DEFAULT_FRONT_MATTER_KEYS = [

@@ -18,6 +18,13 @@ describe("sanitizeFilename", () => {
         it("should return empty string for only special characters", () => {
             expect(sanitizeFilename("@#$%^&*")).toBe("");
         });
+        it("should trim separators from long runs at both ends quickly", () => {
+            const noisy = "-".repeat(50000) + "Title" + "!".repeat(50000);
+            const start = Date.now();
+            expect(sanitizeFilename(noisy)).toBe("title");
+            expect(sanitizeFilename("a" + " -".repeat(50000))).toBe("a");
+            expect(Date.now() - start).toBeLessThan(500);
+        });
         it("should trim leading/trailing dashes after replacement", () => {
             expect(sanitizeFilename("--Hello--World--")).toBe("hello-world");
             expect(sanitizeFilename("---Test---")).toBe("test");
