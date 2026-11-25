@@ -2,20 +2,34 @@
 
 Paste these into the developer dashboard by hand. Update to the existing listing.
 
+## Package
+
+Upload `distribution.zip` from the repo root, built by `bash build-distribution.sh`, or the one on the GitHub
+release.
+
 ## Store listing tab
 
-**Name** (from the manifest): Hiyd
+Name and summary come from the manifest.
 
-**Summary** (from the manifest description, 132 characters at most):
+Name:
 
+```text
+Hiyd
+```
+
+Summary (132 characters at most):
+
+```text
 Capture highlighted text and page metadata as markdown.
+```
 
-**Category:** Productivity > Tools
+Category: choose Productivity > Tools.
 
-**Language:** English (UK)
+Language: choose English (UK).
 
-**Description:**
+Description:
 
+```text
 Hiyd turns a quote from any web page into a linked quote post for your Jekyll blog.
 
 Highlight some text, right-click and choose "Hiyd Capture". Hiyd saves a Markdown file with the quote and Jekyll front matter, ready to publish.
@@ -35,32 +49,70 @@ Help: raise an issue on GitHub (https://github.com/thechelsuk/ext-chrome-hiyd/is
 If you can support me and continued ongoing development: GitHub Sponsors (https://github.com/sponsors/thechelsuk) or Ko-fi (https://ko-fi.com/thechelsuk).
 
 Made with ♥ in the UK by thechels.uk (https://thechels.uk). See my other projects: https://thechels.uk/projects
+```
 
-**Official URL:** https://hiyd.uk
+Official URL: choose hiyd.uk.
 
-**Homepage URL:** https://hiyd.uk
+Homepage URL:
 
-**Support URL:** https://hiyd.uk/support/
+```text
+https://hiyd.uk
+```
 
-**Images:** keep the ones already on the listing. Nothing in this update changes how the capture works.
+Support URL:
+
+```text
+https://hiyd.uk/support/
+```
+
+Images: keep the ones already on the listing. Nothing in this update changes how the capture works.
 
 ## Privacy practices tab
 
-**Single purpose:** Save highlighted text from a web page, with the page's details, as a Markdown quote post for a Jekyll blog.
+Single purpose:
 
-**Permission justifications:**
-- `contextMenus`: adds the "Hiyd Capture" item to the right-click menu when text is selected.
-- `activeTab`: reads the selection and page details from the tab where you chose "Hiyd Capture".
-- `scripting`: opens the save dialog in that tab so you can save the Markdown file.
-- `storage`: saves your custom front matter items.
-- Host permission (content script on all sites): the quote can come from any web page, so the script that reads the selection and the page's title, author, description and keywords has to be available on every site. It only responds when you choose "Hiyd Capture".
+```text
+Save highlighted text from a web page, with the page's details, as a Markdown quote post for a Jekyll blog.
+```
 
-**Remote code:** No, I am not using remote code.
+Permission justifications, one box each:
 
-**Data usage:** collects none of the listed data types. Tick all three certifications (not sold to third parties; not used for purposes unrelated to the item's single purpose; not used for creditworthiness or lending).
+`contextMenus`:
 
-**Privacy policy URL:** https://hiyd.uk/privacy/
+```text
+Adds the "Hiyd Capture" item to the right-click menu when text is selected.
+```
 
-## Package
+`activeTab`:
 
-Upload `distribution.zip` from the repo root, built by `bash build-distribution.sh`.
+```text
+Reads the selection and page details from the tab where you chose "Hiyd Capture".
+```
+
+`scripting`:
+
+```text
+Opens the save dialog in that tab so you can save the Markdown file.
+```
+
+`storage`:
+
+```text
+Saves your custom front matter items.
+```
+
+Host permission (content script on all sites):
+
+```text
+The quote can come from any web page, so the script that reads the selection and the page's title, author, description and keywords has to be available on every site. It only responds when you choose "Hiyd Capture".
+```
+
+Remote code: choose "No, I am not using remote code".
+
+Data usage: tick none of the data types, then tick all three certifications.
+
+Privacy policy URL:
+
+```text
+https://hiyd.uk/privacy/
+```
