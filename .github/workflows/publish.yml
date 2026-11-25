@@ -54,6 +54,17 @@ jobs:
             - name: Build distribution
               run: bash build-distribution.sh
 
+            - name: Check if the version is new
+              id: new_version
+              env:
+                  TAG: v${{ steps.get_version.outputs.version }}
+              run: |
+                  if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+                    echo "new=false" >> "$GITHUB_OUTPUT"
+                  else
+                    echo "new=true" >> "$GITHUB_OUTPUT"
+                  fi
+
             - name: Create GitHub Release
               uses: softprops/action-gh-release@v2
               with:
@@ -64,3 +75,12 @@ jobs:
               # Use the default repository token rather than a custom PAT secret
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Publish to the Chrome Web Store
+              if: steps.new_version.outputs.new == 'true' && vars.CWS_ITEM_ID != ''
+              uses: thechelsuk/workflows/.github/actions/chrome-web-store@main
+              with:
+                  publisher_id: ${{ vars.CWS_PUBLISHER_ID }}
+                  item_id: ${{ vars.CWS_ITEM_ID }}
+                  zip: distribution.zip
+                  service_account_key: ${{ secrets.CWS_SERVICE_ACCOUNT_KEY }}
